@@ -1,6 +1,8 @@
 package b_huawei_leetcode
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type ListNode struct {
 	Val  int
