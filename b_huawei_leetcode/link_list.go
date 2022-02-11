@@ -30,3 +30,11 @@ func PrintLinkList(head *ListNode) {
 	}
 	fmt.Println(arr)
 }
+
+func ReversePrintLinkList(head *ListNode) {
+	if head == nil {
+		return
+	}
+	ReversePrintLinkList(head.Next)
+	fmt.Println(head.Val)
+}

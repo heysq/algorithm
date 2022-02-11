@@ -7,17 +7,28 @@ package b_huawei_leetcode
  *     Next *ListNode
  * }
  */
+// func reverseList(head *ListNode) *ListNode {
+// 	if head == nil || head.Next == nil {
+// 		return head
+// 	}
+// 	var curNode = head
+// 	var preNode *ListNode = nil
+// 	for curNode != nil {
+// 		node := curNode.Next
+// 		curNode.Next = preNode
+// 		preNode = curNode
+// 		curNode = node
+// 	}
+// 	return preNode
+// }
+
+
 func reverseList(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
+	if head.Next == nil {
 		return head
 	}
-	var curNode = head
-	var preNode *ListNode = nil
-	for curNode != nil {
-		node := curNode.Next
-		curNode.Next = preNode
-		preNode = curNode
-		curNode = node
-	}
-	return preNode
+	last := reverseList(head.Next)
+	head.Next.Next = head
+	head.Next = nil
+	return last
 }
