@@ -21,6 +21,8 @@ import (
 // }
 
 // 非递归解法
+// 递归公示 f(n) = f(n-1) + f(n-2)
+// https://leetcode-cn.com/problems/climbing-stairs/
 func climbStairs(n int) int {
 	if n <= 2 {
 		return n

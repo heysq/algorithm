@@ -4,6 +4,12 @@ import (
 	"fmt"
 )
 
+/*
+https://leetcode-cn.com/problems/merge-sorted-array
+1. 遍历两个数组，直到一个为空
+2. 创建数组长度和的新数组，全都自减一
+*/
+
 // func merge(nums1 []int, m int, nums2 []int, n int)  {
 // 	for i := 0; i <n; i ++ {
 // 		nums1[m + i] = nums2[i]

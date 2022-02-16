@@ -2,6 +2,12 @@ package b_huawei_leetcode
 
 import "fmt"
 
+/*
+https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array
+1. 暴力解法 循环n，循环nums，不存在记录到结果数组
+2. map存储nums数组存在的元素，循环n，查map，不存在就记录到结果数组
+3. 用nums本身当作hash表统计，将数组元素对应为索引的位置加n,遍历加n后的数组，若数组元素值小于等于n，则说明数组下标值不存在，即消失的数字
+*/
 // func findDisappearedNumbers(nums []int) []int {
 // 	var result []int
 // 	for i := 1; i <= len(nums); i++ {
@@ -35,10 +41,10 @@ import "fmt"
 
 func findDisappearedNumbers(nums []int) []int {
 	var n = len(nums)
-	for _, value := range nums {
-		x := (value - 1) % n
-		fmt.Println(x)
-		nums[x] += n
+	for _, v := range nums {
+		v := (v - 1) % n
+		fmt.Println(v)
+		nums[v] += n
 	}
 	var res []int
 	for i, value := range nums {

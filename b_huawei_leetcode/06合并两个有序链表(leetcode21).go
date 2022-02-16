@@ -1,6 +1,10 @@
 package b_huawei_leetcode
 
-
+/*
+https://leetcode-cn.com/problems/merge-two-sorted-lists/
+1. 循环遍历，遇到一个为空追加另一个到结尾
+2. 递归遍历，递归调用 下一个节点与另一个链表的头
+*/
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	if list1 == nil {

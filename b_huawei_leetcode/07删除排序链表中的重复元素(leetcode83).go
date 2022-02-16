@@ -1,5 +1,10 @@
 package b_huawei_leetcode
 
+/*
+https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+1. node 与 node.Next 值相同的时候，node.Next = node.Next.Next
+2. 递归遍历，head.Next.Val == head.Val 返回head.Next
+*/
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -19,7 +24,7 @@ package b_huawei_leetcode
 // 			p = q
 // 		}
 //         q = q.Next
-//             p.Next = nil
+//         p.Next = nil
 // 	}
 
 // 	return head
@@ -40,13 +45,13 @@ package b_huawei_leetcode
 // 	return head
 // }
 
-func deleteDuplicates(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
-	}
-	head.Next = deleteDuplicates(head.Next)
-	if head.Next.Val == head.Val {
-		return head.Next
-	}
-	return head
-}
+// func deleteDuplicates(head *ListNode) *ListNode {
+// 	if head == nil || head.Next == nil {
+// 		return head
+// 	}
+// 	head.Next = deleteDuplicates(head.Next)
+// 	if head.Next.Val == head.Val {
+// 		return head.Next
+// 	}
+// 	return head
+// }

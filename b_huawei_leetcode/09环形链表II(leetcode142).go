@@ -1,5 +1,11 @@
 package b_huawei_leetcode
 
+/*
+https://leetcode-cn.com/problems/linked-list-cycle-ii/
+1. 判断链表有环
+2. 快指针和慢指针相遇的时候，其中一个回到head，每次走一步，再次相遇就是环的交点
+*/
+
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
