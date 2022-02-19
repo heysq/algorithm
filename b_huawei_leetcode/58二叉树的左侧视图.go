@@ -23,7 +23,7 @@ func leftSideView(root *TreeNode) []int {
 		level := queue
 		res = append(res, queue[0].Val)
 		queue = []*TreeNode{}
-		for i:=0; i < len(level); i++{
+		for i := 0; i < len(level); i++ {
 			if level[i].Left != nil {
 				queue = append(queue, level[i].Left)
 			}
