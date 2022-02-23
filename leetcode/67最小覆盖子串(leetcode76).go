@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -53,45 +52,41 @@ import (
 // 	return true
 // }
 
-
 func minWindow(s string, t string) string {
-    ori, cnt := map[byte]int{}, map[byte]int{}
-    for i := 0; i < len(t); i++ {
-        ori[t[i]]++
-    }
-	fmt.Println(ori)
+	var window = make(map[byte]int)
+	var need = make(map[byte]int)
+	for i := 0; i < len(t); i++ {
+		need[t[i]]++
+	}
 
-    sLen := len(s)
-    len := math.MaxInt32
-    ansL, ansR := -1, -1
-
-    check := func() bool {
-        for k, v := range ori {
-            if cnt[k] < v {
-                return false
-            }
-        }
-        return true
-    }
-    for l, r := 0, 0; r < sLen; r++ {
-        if r < sLen && ori[s[r]] > 0 {
-            cnt[s[r]]++
-        }
-        for check() && l <= r {
-			
-            if (r - l + 1 < len) {
-                len = r - l + 1
-                ansL, ansR = l, l + len
-            }
-            if _, ok := ori[s[l]]; ok {
-                cnt[s[l]] -= 1
-            }
-            l++
-        }
-    }
-    if ansL == -1 {
-        return ""
-    }
-    return s[ansL:ansR]
+	var left, right, valid, start int
+	var size = math.MaxInt
+	for right < len(s) {
+		c := s[right]
+		right++
+		if val, ok := need[c]; ok {
+			window[c]++
+			if window[c] == val {
+				valid++
+			}
+		}
+		for valid == len(need) {
+			if right-left < size {
+				start = left
+				size = right - left
+			}
+			d := s[left]
+			left++
+			if _, ok := need[d]; ok {
+				if window[d] == need[d] {
+					valid--
+				}
+				window[d]--
+			}
+		}
+	}
+	if size == math.MaxInt {
+		return ""
+	}
+	return s[start : start+size]
 }
-
