@@ -20,11 +20,10 @@ func NewUF(n int) *UF {
 }
 
 func (uf *UF) Find(n int) int {
-	x := uf.arr[n]
-	for x != n {
-		x = uf.arr[uf.arr[x]] // 每次压缩一半
+	for uf.arr[n] != n {
+		n = uf.arr[uf.arr[n]]
 	}
-	return x
+	return n
 }
 
 func (uf *UF) Union(n, m int) {
@@ -47,4 +46,8 @@ func (uf *UF) Union(n, m int) {
 
 func (uf *UF) Connected(n, m int) bool {
 	return uf.Find(n) == uf.Find(m)
+}
+
+func (uf *UF) Count() int {
+	return uf.count
 }
