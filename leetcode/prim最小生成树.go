@@ -1,3 +1,3 @@
 package leetcode
 
-func Prim()
+func Prim() {}

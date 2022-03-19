@@ -3,19 +3,17 @@ package leetcode
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 
-func TestMyStack_GetNum(t *testing.T) {
-	s := MyStack{}
-	s.Push("3")
-	s.Push("5")
-	fmt.Println(s.Empty())
-	fmt.Println(s.GetNum())
+type F struct {
+	Datetime time.Time
 }
 
-func Test_decodeString(t *testing.T) {
-	result := decodeString("3[aef4[ef]r]c")
-	fmt.Println(result)
+func Test_memberDeviceSafe(t *testing.T) {
+	f := F{}
+	t.Log(111)
+	fmt.Println("111", f.Datetime.IsZero())
 }
 
 // zzzyyyypqjkjkjkjkjkjkjkjkefef

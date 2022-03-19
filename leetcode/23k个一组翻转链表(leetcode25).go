@@ -23,21 +23,6 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 	return newHead
 }
 
-func reverse(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
-	}
-	var pre, cur, next *ListNode = head, head, nil
-	for cur != nil {
-		next = cur.Next
-		cur.Next = pre
-		pre = cur
-		cur = next
-
-	}
-	return pre
-}
-
 func reverseAB(a *ListNode, b *ListNode) *ListNode {
 	if a == nil || a.Next == nil {
 		return a

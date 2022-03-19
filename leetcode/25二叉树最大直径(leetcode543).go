@@ -10,6 +10,11 @@ import "math"
  *     Right *TreeNode
  * }
  */
+/*
+利用二叉树的后续遍历思想
+获得左右子树的最大直径
+然后记录遍历途中的最大直径
+*/
 func diameterOfBinaryTree(root *TreeNode) int {
 	var maxDiameter int
 	depth(root, &maxDiameter)

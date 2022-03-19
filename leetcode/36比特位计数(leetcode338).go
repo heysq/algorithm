@@ -1,5 +1,7 @@
 package leetcode
 
+import "fmt"
+
 // func countBits(n int) []int {
 // 	var nums = make([]int, n+1)
 // 	for i := 0; i <= n; i++ {
@@ -12,8 +14,9 @@ package leetcode
 
 func countBits(n int) []int {
 	var nums = make([]int, n+1)
-	for i := 0; i <= n; i++ {
+	for i := 1; i <= n; i++ {
 		nums[i] = nums[i&(i-1)] + 1 // nums[2] = nums[2 &(2-1)] + 1
+		fmt.Println(nums[i])
 	}
 	return nums
 }

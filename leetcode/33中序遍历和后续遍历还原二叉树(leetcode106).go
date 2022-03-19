@@ -8,6 +8,12 @@ package leetcode
  *     Right *TreeNode
  * }
  */
+
+/*
+1. 后续遍历最后一个节点是根节点
+2. 中序遍历根节点的左侧是左子树
+3. 中序遍历根节点的右侧是右子树
+*/
 func buildTree1(inorder []int, postorder []int) *TreeNode {
 	return build(inorder, postorder, 0, len(inorder)-1, 0, len(postorder)-1)
 }

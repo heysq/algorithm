@@ -8,6 +8,12 @@ package leetcode
  *     Right *TreeNode
  * }
  */
+
+ /*
+1. 前序第一个节点就是根节点
+2. 中序遍历根节点左侧是左子树，右侧是右子树
+
+ */
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	return build(preorder, inorder, 0, len(preorder)-1, 0, len(inorder)-1)
 }

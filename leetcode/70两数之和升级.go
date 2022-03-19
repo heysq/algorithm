@@ -4,6 +4,8 @@ import (
 	"sort"
 )
 
+// 两数之和升级
+// 返回所有可能的和，如果数组重复，可以跳过相同的，优化时间复杂度
 func twoSumHighLevel(nums []int, target int) [][]int {
 	sort.Ints(nums)
 	res := [][]int{}

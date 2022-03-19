@@ -10,6 +10,13 @@ import "math"
  *     Right *TreeNode
  * }
  */
+
+/*
+ 二叉树后续遍历思想
+ 1. 左树是不是平衡二叉树
+ 2. 右树是不是平衡二叉树
+ 4. 自己是不是平衡二叉树
+*/
 func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true

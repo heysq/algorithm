@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -13,6 +12,13 @@ import (
  *     Right *TreeNode
  * }
  */
+
+/*
+每次循环取出最大值，做为根节点
+1、最大值索引左边的是左子树
+2. 最大值索引右边的是右子树
+*/
+
 func constructMaximumBinaryTree(nums []int) *TreeNode {
 	if len(nums) == 0 {
 		return nil
@@ -30,7 +36,6 @@ func construct(nums []int, i, j int) *TreeNode {
 	}
 
 	var maxVal, maxIndex = nums[i], math.MinInt
-	fmt.Println(i, j)
 	for k := i; k <= j; k++ {
 		if nums[k] > maxVal {
 			maxVal = nums[k]

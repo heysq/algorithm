@@ -8,6 +8,10 @@ package leetcode
  *     Right *TreeNode
  * }
  */
+
+/*
+利用后续遍历，知道左右子树的最大深度
+*/
 // func maxDepth(root *TreeNode) int {
 // 	if root == nil {
 // 		return 0

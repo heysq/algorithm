@@ -8,6 +8,12 @@ package leetcode
  *     Right *TreeNode
  * }
  */
+
+ /*
+1. 前序和后续遍历无法唯一确定二叉树的结构
+2. 前序遍历可以确定根节点，然后更几点的下一个节点左子树
+3. 递归拆分数组 
+ */
 func constructFromPrePost(preorder []int, postorder []int) *TreeNode {
 	return build2(preorder, postorder, 0, len(preorder)-1, 0, len(postorder)-1)
 }
